@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'; // Import toast and ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for styling
+
 import './login.css';
 
 function Login() {
@@ -22,12 +23,12 @@ function Login() {
         const { AadharNo, password } = loginInfo;
 
         if (!AadharNo || !password) {
-            toast.error('Aadhar Number and password are required');
+            toast.error('Aadhar Number and password are required'); // ✅ Toast error notification
             return;
         }
 
         // Simulate successful login for frontend testing
-        toast.success('Login successful! Redirecting...');
+        toast.success('Login successful! Redirecting...'); // ✅ Toast success notification
         setTimeout(() => {
             navigate('/home');
         }, 1000);
@@ -60,6 +61,8 @@ function Login() {
                 <button type='submit'>Login</button>
                 <span>Don't have an account? <Link to="/signup">Signup</Link></span>
             </form>
+
+            {/* ✅ Ensure ToastContainer is inside the component */}
             <ToastContainer />
         </div>
     );
